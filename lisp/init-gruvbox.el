@@ -1,2 +1,2 @@
-(load-theme 'gruvbox t)
+(load-theme 'gruvbox-dark-hard t)
 (provide 'init-gruvbox)
