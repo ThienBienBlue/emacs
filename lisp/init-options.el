@@ -1,8 +1,8 @@
 (defvar setup/default-font-size 110)
 
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 120) (height . 80)))
-
 (setq display-line-numbers-type 'relative)
+
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq ring-bell-function 'ignore)
@@ -16,6 +16,7 @@
 (global-hl-line-mode +1)
 
 (set-face-attribute 'default nil
+                    :font "FiraCode Nerd Font Mono"
                     :height setup/default-font-size
                     :slant 'normal
                     :underline nil)

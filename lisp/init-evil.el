@@ -2,5 +2,4 @@
       evil-insert-state-cursor 'box)
 (require 'evil)
 (evil-mode 1)
-
 (provide 'init-evil)
