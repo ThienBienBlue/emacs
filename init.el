@@ -1,43 +1,30 @@
 ;; Set up package.el to work with various stores.
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; Packages to install.
-(defconst setup/packages
-  '(evil
-    smart-tabs-mode
-    tree-sitter
-    tree-sitter-langs
-    go-mode
-    lsp-mode
-    lsp-ui
-    company
-    yasnippet
-    flycheck
-    gruvbox-theme))
-(defvar setup/missing-packages '())
-
-(dolist (package setup/packages)
-  (unless (package-installed-p package)
-    (add-to-list 'setup/missing-packages package)))
-(when setup/missing-packages
+(unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (dolist (package setup/packages)
-    (package-install package))
-  (setq setup/missing-packages '()))
+  (package-install 'use-package))
 
+(eval-when-compile
+  (setq use-package-always-ensure t
+	use-package-expand-minimally t))
+
+
+;; Allow for accessing other init files.
 (defvar setup/config-dir (concat user-emacs-directory "lisp"))
 (push setup/config-dir load-path)
 
 (require 'init-evil)
+(require 'init-languages)
 (require 'init-smart-tabs)
-(require 'init-gruvbox)
 (require 'init-tree-sitter)
-(require 'init-lsp)
-(require 'init-company)
+(require 'init-yasnippet)
 (require 'init-flycheck)
+(require 'init-company)
+(require 'init-lsp)
+(require 'init-gruvbox)
 (require 'init-options)
 
 ;; End of init file. Anything beyond is automatically added by some other force.
