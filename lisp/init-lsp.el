@@ -1,3 +1,5 @@
+(setq lsp-keymap-prefix "C-c C-l")
+
 (require 'lsp-mode)
 
 (defun lsp-on-attach ()
@@ -9,6 +11,5 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
-
 
 (provide 'init-lsp)

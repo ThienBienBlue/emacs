@@ -3,9 +3,11 @@
       company-idle-delay 0.0
       company-selection-wrap-around t)
 
-(define-key evil-insert-state-map (kbd "C-e") 'company-abort)
-(define-key evil-insert-state-map (kbd "C-y") 'company-complete-selection)
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "C-e") 'company-abort)
+  (define-key company-active-map (kbd "C-y") 'company-complete-selection))
 
+;; From CompanyMode's guide for Yasnippet integration.
 (defun check-expansion ()
   (save-excursion
     (if (looking-at "\\_>") t

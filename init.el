@@ -7,7 +7,7 @@
 ;; Packages to install.
 (defconst setup/packages
   '(evil
-	smart-tabs-mode
+    smart-tabs-mode
     tree-sitter
     tree-sitter-langs
     go-mode
