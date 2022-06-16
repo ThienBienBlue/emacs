@@ -3,7 +3,7 @@
 
 (use-package evil
   :config
-  (require 'evil)
+  (evil-set-leader 'normal (kbd "\\"))
   (evil-mode 1))
 
 (provide 'init-evil)
