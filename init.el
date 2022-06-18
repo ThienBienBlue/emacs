@@ -9,7 +9,7 @@
 
 (eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t
-    use-package-expand-minimally t)
+      use-package-expand-minimally t)
 
 ;; Allow for accessing other init files. These files should use `use-package`.
 (defvar setup/config-dir (concat user-emacs-directory "lisp"))

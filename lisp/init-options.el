@@ -17,13 +17,12 @@
 ;; Font things
 (defconst setup/default-font-size 110)
 (defconst setup/default-font "FiraCode Nerd Font Mono")
-
-(set-face-attribute 'default nil
-                    :font setup/default-font
-                    :height setup/default-font-size
-                    :slant 'normal
-                    :underline nil)
-(set-face-italic 'default nil)
+(if (find-font (font-spec :name setup/default-font))
+  (set-face-attribute 'default nil
+                      :font setup/default-font
+                      :height setup/default-font-size)
+  (set-face-attribute 'default nil
+                      :height setup/default-font-size))
 
 ;; Ido mode
 (setq ido-enable-flex-matching t)
