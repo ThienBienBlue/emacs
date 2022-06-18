@@ -7,15 +7,16 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(eval-when-compile
-  (setq use-package-always-ensure t
-	use-package-expand-minimally t))
+(eval-when-compile (require 'use-package))
+(setq use-package-always-ensure t
+    use-package-expand-minimally t)
 
 ;; Allow for accessing other init files. These files should use `use-package`.
 (defvar setup/config-dir (concat user-emacs-directory "lisp"))
 (push setup/config-dir load-path)
 
 (require 'init-evil)
+(require 'init-projectile)
 (require 'init-languages)
 (require 'init-smart-tabs)
 (require 'init-tree-sitter)
@@ -36,7 +37,7 @@
    ["#3c3836" "#fb4934" "#b8bb26" "#fabd2f" "#83a598" "#d3869b" "#8ec07c" "#ebdbb2"])
  '(custom-safe-themes
    '("7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" default))
- '(package-selected-packages '(evil))
+ '(package-selected-packages '(clojure-mode evil))
  '(pdf-view-midnight-colors '("#fdf4c1" . "#1d2021")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

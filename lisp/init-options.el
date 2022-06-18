@@ -4,6 +4,7 @@
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq ring-bell-function 'ignore)
+(scroll-bar-mode -1)
 
 (setq make-backup-files nil)
 (setq backup-by-copying t)
