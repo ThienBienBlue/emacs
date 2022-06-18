@@ -11,8 +11,7 @@
   (setq use-package-always-ensure t
 	use-package-expand-minimally t))
 
-
-;; Allow for accessing other init files.
+;; Allow for accessing other init files. These files should use `use-package`.
 (defvar setup/config-dir (concat user-emacs-directory "lisp"))
 (push setup/config-dir load-path)
 

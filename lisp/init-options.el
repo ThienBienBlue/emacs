@@ -1,6 +1,3 @@
-(defvar setup/default-font-size 110)
-(defvar setup/default-font "FiraCode Nerd Font Mono")
-
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 120) (height . 80)))
 (setq display-line-numbers-type 'relative)
 
@@ -16,12 +13,21 @@
 (global-display-line-numbers-mode t)
 (global-hl-line-mode +1)
 
+;; Font things
+(defconst setup/default-font-size 110)
+(defconst setup/default-font "FiraCode Nerd Font Mono")
+
 (set-face-attribute 'default nil
                     :font setup/default-font
                     :height setup/default-font-size
                     :slant 'normal
                     :underline nil)
 (set-face-italic 'default nil)
+
+;; Ido mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
 
 ;; Matching Parentheses
 (setq show-paren-delay 0)
