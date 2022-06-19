@@ -24,11 +24,6 @@
   (set-face-attribute 'default nil
                       :height setup/default-font-size))
 
-;; Ido mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode t)
-
 ;; Matching Parentheses
 (setq show-paren-delay 0)
 (show-paren-mode t)

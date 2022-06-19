@@ -1,6 +1,7 @@
 ;; Set up package.el to work with various stores.
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -16,6 +17,7 @@
 (push setup/config-dir load-path)
 
 (require 'init-evil)
+(require 'init-helm)
 (require 'init-projectile)
 (require 'init-languages)
 (require 'init-smart-tabs)
