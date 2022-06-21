@@ -1,4 +1,3 @@
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 120) (height . 80)))
 (setq display-line-numbers-type 'relative)
 
 (setq inhibit-startup-screen t)
