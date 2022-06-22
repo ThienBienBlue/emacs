@@ -32,4 +32,7 @@
               c-basic-offset 4
               tab-width 4)
 
+;; Org-mode options
+(setq org-src-tab-acts-natively t)
+
 (provide 'init-options)
