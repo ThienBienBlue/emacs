@@ -1,3 +1,5 @@
+(use-package rg)
+
 (use-package projectile
   :config
   (projectile-mode t)
