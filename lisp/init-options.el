@@ -3,7 +3,10 @@
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
 (setq ring-bell-function 'ignore)
+
 (scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (setq make-backup-files nil)
 (setq backup-by-copying t)
@@ -11,7 +14,7 @@
 (setq auto-save-default nil)
 
 (global-display-line-numbers-mode t)
-(global-hl-line-mode +1)
+(global-hl-line-mode t)
 
 ;; Font things
 (defconst setup/default-font-size 110)
