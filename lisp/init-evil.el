@@ -6,8 +6,6 @@
 (use-package evil
   :config
   (evil-set-leader 'normal (kbd "\\"))
-  (evil-global-set-key 'normal (kbd "<tab>") 'evil-indent)
-  (evil-global-set-key 'normal (kbd "TAB") 'evil-indent)
   (global-unset-key (kbd "C-k"))
   (global-unset-key (kbd "C-j"))
   (evil-mode 1))
