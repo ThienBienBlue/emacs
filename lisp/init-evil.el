@@ -5,7 +5,7 @@
 
 (use-package evil
   :config
-  (evil-set-leader 'normal (kbd "\\"))
+  (evil-set-leader '(normal motion) (kbd "\\"))
   (global-unset-key (kbd "C-k"))
   (global-unset-key (kbd "C-j"))
   (evil-mode 1))
