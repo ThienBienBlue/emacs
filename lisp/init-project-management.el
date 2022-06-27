@@ -5,4 +5,4 @@
   (projectile-mode t)
   (evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-command-map))
 
-(provide 'init-projectile)
+(provide 'init-project-management)

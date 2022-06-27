@@ -9,7 +9,7 @@
 (menu-bar-mode -1)
 
 (setq make-backup-files nil)
-(setq backup-by-copying t)
+(setq backup-by-copying nil)
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 
