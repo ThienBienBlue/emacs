@@ -16,7 +16,7 @@
 (global-display-line-numbers-mode t)
 (global-hl-line-mode t)
 
-;; Font things
+;; Font things.
 (defconst setup/default-font-size 110)
 (defconst setup/default-font "FiraCode Nerd Font Mono")
 (if (find-font (font-spec :name setup/default-font))
@@ -26,16 +26,20 @@
   (set-face-attribute 'default nil
                       :height setup/default-font-size))
 
-;; Matching Parentheses
+;; Matching Parentheses.
 (setq show-paren-delay 0)
 (show-paren-mode t)
 
-;; CC options
+;; CC options.
 (setq-default c-default-style "linux"
               c-basic-offset 4
               tab-width 4)
 
-;; Org-mode options
+;; Org-mode options.
 (setq org-src-tab-acts-natively t)
+
+;; Emacs performace options.
+(setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 1024 1024))
 
 (provide 'init-options)
