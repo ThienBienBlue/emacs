@@ -16,6 +16,9 @@
 (global-display-line-numbers-mode t)
 (global-hl-line-mode t)
 
+;; Make buffer names unique.
+(setq uniquify-buffer-name-style 'post-forward)
+
 ;; Font things.
 (defconst setup/default-font-size 110)
 (defconst setup/default-font "FiraCode Nerd Font Mono")
