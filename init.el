@@ -28,7 +28,6 @@
 (require 'init-smart-tabs)
 (require 'init-tree-sitter)
 (require 'init-snippet)
-(require 'init-flycheck)
 (require 'init-company)
 (require 'init-lsp)
 (require 'init-evil)
