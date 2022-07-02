@@ -1,13 +1,13 @@
 (use-package lsp-mode
   :config
-  (setq lsp-keymap-prefix "C-c C-l")
-  (evil-define-key 'normal 'global (kbd "<leader>la") 'lsp)
-  (evil-define-key 'normal 'global (kbd "<leader>lf") 'lsp-format-buffer)
-  (evil-define-key 'normal 'global (kbd "<leader>lr") 'lsp-rename)
-  (evil-define-key 'normal 'global (kbd "<leader>ld") 'lsp-find-definition)
-  (evil-define-key 'normal 'global (kbd "<leader>lD") 'lsp-find-declaration)
-  (evil-define-key 'normal 'global (kbd "<leader>lt") 'lsp-find-type-definition)
-  (evil-define-key 'normal 'global (kbd "K") 'lsp-ui-doc-glance))
+  (defvar lsp-leader-map (make-sparse-keymap) "Keymap for `<leader>l`.")
+  (define-key lsp-leader-map (kbd "a") 'lsp)
+  (define-key lsp-leader-map (kbd "f") 'lsp-format-buffer)
+  (define-key lsp-leader-map (kbd "r") 'lsp-rename)
+  (define-key lsp-leader-map (kbd "d") 'lsp-find-definition)
+  (define-key lsp-leader-map (kbd "D") 'lsp-find-declaration)
+  (define-key lsp-leader-map (kbd "t") 'lsp-find-type-definition)
+  (define-key lsp-leader-map (kbd "k") 'lsp-ui-doc-glance))
 
 (use-package lsp-ui)
 
