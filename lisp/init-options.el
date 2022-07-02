@@ -13,8 +13,10 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 
+(setq dired-kill-when-opening-new-dired-buffer t)
+(setq use-short-answers t)
+
 (global-display-line-numbers-mode t)
-(global-hl-line-mode t)
 
 ;; Make buffer names unique.
 (setq uniquify-buffer-name-style 'post-forward)

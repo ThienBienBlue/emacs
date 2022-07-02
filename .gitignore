@@ -10,3 +10,4 @@ custom.el
 custom.el~
 transient
 projectile.cache
+eshell
