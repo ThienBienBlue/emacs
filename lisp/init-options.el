@@ -13,7 +13,8 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 
-(setq dired-kill-when-opening-new-dired-buffer t)
+(setq dired-kill-when-opening-new-dired-buffer t
+      dired-listing-switches "-agho --group-directories-first")
 (setq use-short-answers t)
 
 (global-display-line-numbers-mode t)
