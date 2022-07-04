@@ -22,6 +22,7 @@
 (push setup/config-dir load-path)
 
 (require 'init-options)
+(require 'init-org-mode)
 (require 'init-fuzzy-completion)
 (require 'init-languages)
 (require 'init-project-management)

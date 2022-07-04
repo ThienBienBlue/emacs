@@ -10,6 +10,9 @@
   (define-key company-active-map (kbd "TAB") 'yas-next-field-or-maybe-expand)
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.0
-        company-selection-wrap-around t))
+        company-selection-wrap-around t
+        company-frontends '(company-pseudo-tooltip-frontend
+                            company-preview-frontend
+                            company-echo-metadata-frontend)))
 
 (provide 'init-company)

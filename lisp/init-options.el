@@ -25,9 +25,9 @@
 (defconst setup/default-font-size 110)
 (defconst setup/default-font "FiraCode Nerd Font Mono")
 (if (find-font (font-spec :name setup/default-font))
-  (set-face-attribute 'default nil
-                      :font setup/default-font
-                      :height setup/default-font-size)
+    (set-face-attribute 'default nil
+                        :font setup/default-font
+                        :height setup/default-font-size)
   (set-face-attribute 'default nil
                       :height setup/default-font-size))
 
@@ -39,9 +39,6 @@
 (setq-default c-default-style "linux"
               c-basic-offset 4
               tab-width 4)
-
-;; Org-mode options.
-(setq org-src-tab-acts-natively t)
 
 ;; Emacs performace options.
 (setq gc-cons-threshold 100000000)
