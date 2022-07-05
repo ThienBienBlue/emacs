@@ -24,6 +24,7 @@
 (require 'init-options)
 (require 'init-org-mode)
 (require 'init-fuzzy-completion)
+(require 'init-magit)
 (require 'init-languages)
 (require 'init-project-management)
 (require 'init-smart-tabs)
