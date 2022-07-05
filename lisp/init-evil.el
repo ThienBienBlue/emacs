@@ -12,6 +12,7 @@
   (defvar setup/leader-map (make-sparse-keymap) "Keymap for `\\` leader key.")
   (define-key setup/leader-map (kbd "l") lsp-command-map)
   (define-key setup/leader-map (kbd "p") project-prefix-map)
+  (define-key setup/leader-map (kbd "g") 'magit-status)
 
   ;; Bind evil-keys to activate my-leader-map. Use the VIM default.
   (defconst leader-key (kbd "\\") "The chosen VIM leader key.")
