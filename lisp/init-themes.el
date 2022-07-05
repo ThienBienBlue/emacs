@@ -3,8 +3,6 @@
 
 (global-hl-line-mode t)
 
-(use-package gruvbox-theme)
-
 (use-package gruber-darker-theme
   :config
   (load-theme 'gruber-darker t))
