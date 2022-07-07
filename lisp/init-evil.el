@@ -4,7 +4,6 @@
       evil-vsplit-window-right t)
 
 (use-package evil
-
   :config
   ;; Load up the other maps into my-leader-map.
   ;; Emacs uses maps as it's primary way of loading key bindings.
