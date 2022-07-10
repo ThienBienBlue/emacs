@@ -21,9 +21,6 @@
         company-dabbrev-ignore-case nil
         company-frontends '(company-pseudo-tooltip-frontend
                             company-echo-metadata-frontend)
-        company-backends '((company-capf
-                            company-yasnippet
-                            company-dabbrev-code))
         company-transformers '(delete-consecutive-dups)))
 
 (provide 'init-company)
