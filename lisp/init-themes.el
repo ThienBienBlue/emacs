@@ -3,8 +3,8 @@
 
 (global-hl-line-mode t)
 
-(use-package gruber-darker-theme
-  :config
-  (load-theme 'gruber-darker t))
+(set-foreground-color "white") ; light
+                               ; on
+(set-background-color "black") ; dark
 
 (provide 'init-themes)
