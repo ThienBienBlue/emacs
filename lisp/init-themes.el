@@ -3,8 +3,7 @@
 
 (global-hl-line-mode t)
 
-(set-foreground-color "white") ; light
-                               ; on
-(set-background-color "black") ; dark
+(set-foreground-color "#e4e4ef")
+(set-background-color "#181818")
 
 (provide 'init-themes)

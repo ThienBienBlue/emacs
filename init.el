@@ -28,7 +28,6 @@
 (require 'init-languages)
 (require 'init-project-management)
 (require 'init-smart-tabs)
-(require 'init-tree-sitter)
 (require 'init-snippet)
 (require 'init-company)
 (require 'init-lsp)
