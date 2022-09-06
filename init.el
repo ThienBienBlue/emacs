@@ -27,7 +27,6 @@
 (require 'init-magit)
 (require 'init-languages)
 (require 'init-project-management)
-(require 'init-smart-tabs)
 (require 'init-snippet)
 (require 'init-company)
 (require 'init-lsp)
