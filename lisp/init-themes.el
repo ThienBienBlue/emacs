@@ -5,5 +5,6 @@
 
 (set-foreground-color "#e4e4ef")
 (set-background-color "#181818")
+(set-cursor-color "#ffdd33")
 
 (provide 'init-themes)
