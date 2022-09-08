@@ -5,6 +5,7 @@
 
 (set-foreground-color "#e4e4ef")
 (set-background-color "#181818")
+(set-face-background 'hl-line "dark slate gray")
 (set-cursor-color "#ffdd33")
 
 (provide 'init-themes)
