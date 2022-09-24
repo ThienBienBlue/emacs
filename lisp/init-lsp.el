@@ -1,7 +1,2 @@
-(use-package lsp-mode)
-
-(use-package lsp-ui)
-
-(use-package flycheck)
-
+(use-package eglot)
 (provide 'init-lsp)

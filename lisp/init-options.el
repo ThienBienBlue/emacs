@@ -24,7 +24,7 @@
 
 ;; Font things.
 (defconst setup/default-font-size 110)
-(defconst setup/default-font "FiraCode Nerd Font Mono")
+(defconst setup/default-font "Fira Code")
 (if (find-font (font-spec :name setup/default-font))
     (set-face-attribute 'default nil
                         :font setup/default-font
