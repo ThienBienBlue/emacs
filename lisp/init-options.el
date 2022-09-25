@@ -18,6 +18,7 @@
 (setq use-short-answers t)
 
 (global-display-line-numbers-mode t)
+(global-auto-revert-mode t)
 
 ;; Make buffer names unique.
 (setq uniquify-buffer-name-style 'post-forward)
@@ -40,9 +41,5 @@
 (setq-default c-default-style "linux"
               c-basic-offset 4
               tab-width 4)
-
-;; Emacs performace options.
-(setq gc-cons-threshold 100000000)
-(setq read-process-output-max (* 1024 1024))
 
 (provide 'init-options)
