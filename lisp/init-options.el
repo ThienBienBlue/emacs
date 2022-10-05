@@ -20,6 +20,10 @@
 (global-display-line-numbers-mode t)
 (global-auto-revert-mode t)
 
+;; Fuzzy completion options
+(setq completion-styles '(initials partial-completion flex))
+(fido-mode)
+
 ;; Make buffer names unique.
 (setq uniquify-buffer-name-style 'post-forward)
 
