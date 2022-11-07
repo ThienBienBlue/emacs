@@ -13,7 +13,7 @@
   (define-key setup/eglot-map (kbd "G") 'xref-find-references)
   (define-key setup/eglot-map (kbd "h") 'eglot-find-declaration)
   (define-key setup/eglot-map (kbd "H") 'eglot-find-typeDefinition)
-  (define-key setup/eglot-map (kbd "k") 'eldoc-doc-buffer)
+  (define-key setup/eglot-map (kbd "d") 'eldoc-doc-buffer)
   (define-key setup/eglot-map (kbd "i") 'eglot-find-implementation)
   (define-key setup/eglot-map (kbd "c") 'eglot-code-actions)
 
