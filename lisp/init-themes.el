@@ -4,10 +4,6 @@
 (set-foreground-color "#e4e4ef")
 (set-background-color "#181818")
 (set-cursor-color "#ffdd33")
-(set-face-attribute 'line-number-current-line nil
-					:foreground
-					(face-attribute 'default :background)
-					:background
-					(face-attribute 'default :foreground))
+(set-face-attribute 'line-number-current-line nil :box t)
 
 (provide 'init-themes)
