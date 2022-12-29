@@ -27,15 +27,7 @@
 ;; Make buffer names unique.
 (setq uniquify-buffer-name-style 'post-forward)
 
-;; Font things.
-(defconst setup/default-font-size 110)
-(defconst setup/default-font "Fira Code")
-(if (find-font (font-spec :name setup/default-font))
-    (set-face-attribute 'default nil
-                        :font setup/default-font
-                        :height setup/default-font-size)
-  (set-face-attribute 'default nil
-                      :height setup/default-font-size))
+(set-face-attribute 'default nil :height 110)
 
 ;; Matching Parentheses.
 (setq show-paren-delay 0)
