@@ -21,9 +21,9 @@
 (global-auto-revert-mode t)
 
 ;; Indentation related options.
-(setq-default indent-tabs-mode nil)
 (setq-default electric-indent-inhibit t)
 (setq backward-delete-char-untabify-method 'hungry)
+(setq c-syntactic-indentation nil)
 
 ;; Fuzzy completion options
 (setq completion-styles '(initials partial-completion flex))
