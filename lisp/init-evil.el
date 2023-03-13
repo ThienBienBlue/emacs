@@ -16,6 +16,7 @@
   (define-key setup/leader-c-map (kbd "c") 'corfu-mode)
   (define-key setup/leader-c-map (kbd "f") 'ffap)
   (define-key setup/leader-c-map (kbd "g") 'xref-goto-xref)
+  (define-key setup/leader-c-map (kbd "t") 'load-theme)
 
   ;; Bind maps to the leader key
   (define-key setup/leader-map (kbd "c") setup/leader-c-map)
