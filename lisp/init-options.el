@@ -19,11 +19,22 @@
 
 (global-display-line-numbers-mode t)
 (global-auto-revert-mode t)
+(global-set-key [remap list-buffers] 'ibuffer)
 
-;; Indentation related options.
-(setq-default electric-indent-inhibit t)
-(setq backward-delete-char-untabify-method 'hungry)
-(setq c-syntactic-indentation nil)
+;; Indentation related global options.
+(setq backward-delete-char-untabify-method nil)
+
+;; Indentation related specifics options.
+(add-hook 'c-mode-common-hook
+          (lambda () (setq indent-tabs-mode nil)))
+(add-hook 'c-mode-hook
+          (lambda () (setq indent-tabs-mode t)
+            (setq c-syntactic-indentation nil)
+            (setq electric-indent-inhibit t)))
+(add-hook 'lisp-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
 
 ;; Fuzzy completion options
 (setq completion-styles '(initials partial-completion flex))
