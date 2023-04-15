@@ -25,16 +25,21 @@
 (setq backward-delete-char-untabify-method nil)
 
 ;; Indentation related specifics options.
-(add-hook 'c-mode-common-hook
-          (lambda () (setq indent-tabs-mode nil)))
+(defun let-mode-handle-indentation ()
+  (setq indent-tabs-mode nil)
+  (setq backward-delete-char-untabify-method 'hungry))
+
+(setq modes-that-handle-indentation '(c-mode-common-hook
+                                      lisp-mode-hook
+                                      emacs-lisp-mode-hook))
+(dolist (mode modes-that-handle-indentation)
+  (add-hook mode 'let-mode-handle-indentation))
+
 (add-hook 'c-mode-hook
           (lambda () (setq indent-tabs-mode t)
+            (setq backward-delete-char-untabify-method nil)
             (setq c-syntactic-indentation nil)
             (setq electric-indent-inhibit t)))
-(add-hook 'lisp-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
-(add-hook 'emacs-lisp-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
 
 ;; Fuzzy completion options
 (setq completion-styles '(initials partial-completion flex))
