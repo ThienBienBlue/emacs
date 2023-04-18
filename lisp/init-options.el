@@ -12,6 +12,7 @@
 (setq backup-by-copying nil)
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq dired-kill-when-opening-new-dired-buffer t
       dired-listing-switches "-agho --group-directories-first")
