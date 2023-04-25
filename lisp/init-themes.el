@@ -6,4 +6,6 @@
 (set-cursor-color "#ffdd33")
 (set-face-attribute 'line-number-current-line nil :foreground "#ffdd33")
 
+(set-face-attribute 'default nil :height 110)
+
 (provide 'init-themes)

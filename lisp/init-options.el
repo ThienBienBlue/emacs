@@ -1,6 +1,6 @@
-(setq display-line-numbers-type 'relative)
-
+;; Options affecting things immediately on screen.
 (setq inhibit-startup-screen t)
+(setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
 (setq ring-bell-function 'ignore)
 
@@ -8,6 +8,11 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(global-display-line-numbers-mode t)
+(global-set-key [remap list-buffers] 'ibuffer)
+(global-auto-revert-mode t)
+
+;; File related options.
 (setq make-backup-files nil)
 (setq backup-by-copying nil)
 (setq create-lockfiles nil)
@@ -17,10 +22,6 @@
 (setq dired-kill-when-opening-new-dired-buffer t
       dired-listing-switches "-agho --group-directories-first")
 (setq use-short-answers t)
-
-(global-display-line-numbers-mode t)
-(global-auto-revert-mode t)
-(global-set-key [remap list-buffers] 'ibuffer)
 
 ;; Indentation related global options.
 (setq backward-delete-char-untabify-method nil)
@@ -48,8 +49,6 @@
 
 ;; Make buffer names unique.
 (setq uniquify-buffer-name-style 'post-forward)
-
-(set-face-attribute 'default nil :height 110)
 
 ;; Matching Parentheses.
 (setq show-paren-delay 0)
