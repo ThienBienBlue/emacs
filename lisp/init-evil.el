@@ -1,7 +1,7 @@
 (setq evil-want-C-u-scroll t
-	  evil-want-fine-undo t
+      evil-want-fine-undo t
       evil-search-module 'evil-search
-	  evil-undo-system 'undo-redo
+      evil-undo-system 'undo-redo
       evil-split-window-below t
       evil-vsplit-window-right t)
 
