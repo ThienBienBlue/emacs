@@ -7,6 +7,8 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(tab-bar-mode t)
+(add-to-list 'tab-bar-format #'tab-bar-format-menu-bar)
 
 (global-display-line-numbers-mode t)
 (global-set-key [remap list-buffers] 'ibuffer)
