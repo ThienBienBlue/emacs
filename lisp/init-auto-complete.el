@@ -20,6 +20,8 @@
   :bind
   (:map corfu-map
 		("<escape>" . setup/abort-into-normal-mode)
+        ("TAB" . nil)
+        ("<tab>" . nil)
 		("RET" . newline)
 		("M-p" . corfu-first)
 		("M-n" . corfu-last)
