@@ -5,7 +5,7 @@
 ;(set-background-color "#282828")
 ;(set-cursor-color "#ffdd33")
 ;(set-face-attribute 'line-number-current-line nil :foreground "#ffdd33")
-(load-theme 'modus-operandi)
+(load-theme 'tango-dark)
 
 (set-face-attribute 'default nil :height 110)
 
