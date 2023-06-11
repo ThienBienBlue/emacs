@@ -7,6 +7,11 @@
 ;(set-face-attribute 'line-number-current-line nil :foreground "#ffdd33")
 (load-theme 'tango-dark)
 
-(set-face-attribute 'default nil :height 110)
+(setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
+                          '("Fira Code"
+                            "Source Code Pro")))
+(if font-name
+    (set-face-attribute 'default nil :height 110 :font font-name)
+  (set-face-attribute 'default nil :height 110))
 
 (provide 'init-themes)
