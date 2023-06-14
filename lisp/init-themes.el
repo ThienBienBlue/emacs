@@ -7,6 +7,7 @@
 ;(set-face-attribute 'line-number-current-line nil :foreground "#ffdd33")
 (load-theme 'tango-dark)
 
+(setq-default line-spacing 0.1)
 (setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
                           '("Fira Mono"
                             "Fira Code"
@@ -14,7 +15,6 @@
                             "Source Code Pro"
                             "Ubuntu Mono")))
 (if font-name
-    (set-face-attribute 'default nil :height 110 :font font-name)
-  (set-face-attribute 'default nil :height 110))
+    (set-face-attribute 'default nil :font font-name))
 
 (provide 'init-themes)
