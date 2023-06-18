@@ -2,6 +2,7 @@
       evil-want-fine-undo t
       evil-search-module 'evil-search
       evil-undo-system 'undo-redo
+      evil-visual-state-cursor '(hollow)
       evil-split-window-below t
       evil-vsplit-window-right t)
 
