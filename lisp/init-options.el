@@ -26,7 +26,9 @@
 (setq use-short-answers t)
 
 ;; Indentation related global options.
-(setq backward-delete-char-untabify-method nil)
+(setq-default backward-delete-char-untabify-method nil
+              indent-tabs-mode nil
+              tab-width 4)
 
 ;; Indentation related specifics options.
 (defun let-mode-handle-indentation ()
@@ -46,11 +48,11 @@
             (setq electric-indent-inhibit t)))
 
 ;; Fuzzy completion options
-(setq completion-styles '(initials partial-completion flex))
+(setq-default completion-styles '(initials partial-completion flex))
 (fido-mode)
 
 ;; Make buffer names unique.
-(setq uniquify-buffer-name-style 'post-forward)
+(setq-default uniquify-buffer-name-style 'post-forward)
 
 ;; Matching Parentheses.
 (setq show-paren-delay 0)
@@ -58,7 +60,6 @@
 
 ;; CC options.
 (setq-default c-default-style "linux"
-              c-basic-offset 4
-              tab-width 4)
+              c-basic-offset 4)
 
 (provide 'init-options)
