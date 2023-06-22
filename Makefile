@@ -1,5 +1,5 @@
 clean:
-	rm session.*
+	find . -name 'session.*' -exec rm {} +
 	rm -rf eln-cache
 	rm -rf elpa
 	rm -rf transient
