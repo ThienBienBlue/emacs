@@ -13,6 +13,7 @@
 (global-display-line-numbers-mode t)
 (global-set-key [remap list-buffers] 'ibuffer)
 (global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t)
 
 ;; File related options.
 (setq make-backup-files nil)
