@@ -11,6 +11,17 @@
                        ((eq :b rgb) (substring hex 5 7)))))
     (hex-to-int hex-str)))
 
+(defun color-to-hex (color)
+  "Converts 'black' to #FFFFFF, #FFFFFF to #FFFFFF"
+  (let ((hex-16-channel (color-values color)))
+    (let ((r (nth 0 hex-16-channel))
+          (g (nth 1 hex-16-channel))
+          (b (nth 2 hex-16-channel)))
+      (format "#%X%X%X" (/ r 256) (/ g 256) (/ b 256)))))
+
+(defun face-att-hex (face att)
+  (color-to-hex (face-attribute face att)))
+
 (defun add-hex (add-sub hex1 hex2)
   "Given #aabbcc and #ddeeff in hex, return #{aa+dd}{bb+ee}{cc+ff}"
   (defun capped (hex)
@@ -32,12 +43,18 @@
             (op b1 b2))))
 
 (let ((theme-darkmode (eq 'dark (frame-parameter nil 'background-mode)))
-      (whitespace-foreground-unadjusted (face-attribute 'default :background)))
-  (let ((whitespace-foreground-adjusted (add-hex (if theme-darkmode :add :sub)
-                                                 whitespace-foreground-unadjusted
-                                                 "#101010")))
+      (whitespace-foreground-unadjusted (face-att-hex 'default :background))
+      (dim-text-foreground-unadjusted (face-att-hex 'shadow :foreground)))
+  (let ((whitespace-foreground (add-hex (if theme-darkmode :add :sub)
+                                        whitespace-foreground-unadjusted
+                                        "#101010"))
+        (dim-text-foreground (add-hex (if theme-darkmode :sub :add)
+                                      dim-text-foreground-unadjusted
+                                      "#505050")))
+    (set-face-attribute 'line-number nil :foreground dim-text-foreground)
+    (set-face-attribute 'line-number-current-line nil :foreground dim-text-foreground-unadjusted)
     (defface unobtrusive-whitespace
-      `((t :foreground ,whitespace-foreground-adjusted))
+      `((t :foreground ,whitespace-foreground))
       "Barely visible unless highlighting.")))
 
 (setq whitespace-style '(face tabs spaces tab-mark space-mark)
