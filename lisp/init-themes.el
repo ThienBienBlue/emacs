@@ -66,10 +66,10 @@
 
 (setq-default line-spacing 0.1)
 (setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
-                              '("Fira Mono"
-                                "JetBrains Mono"
-                                "Source Code Pro"
-                                "Cascadia Code")))
+                              '("Fira Mono")))
+                                ;"JetBrains Mono"
+                                ;"Source Code Pro"
+                                ;"Cascadia Code")))
 (if (< 0 (length fonts-found))
     (progn (setq chosen-font (seq-random-elt fonts-found))
            (set-face-attribute 'default nil :font chosen-font)))
