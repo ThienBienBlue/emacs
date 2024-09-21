@@ -15,7 +15,7 @@
 
   ;; Personal <leader>c mappings. `c` key to follow C-c convention for emacs.
   (defvar setup/leader-c-map (make-sparse-keymap) "Keymap for `<leader>c` prefix.")
-  (define-key setup/leader-c-map (kbd "c") 'corfu-mode)
+  (define-key setup/leader-c-map (kbd "c") 'company-mode)
   (define-key setup/leader-c-map (kbd "f") 'ffap)
   (define-key setup/leader-c-map (kbd "g") 'xref-goto-xref)
   (define-key setup/leader-c-map (kbd "t") 'load-theme)

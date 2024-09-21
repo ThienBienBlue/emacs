@@ -1,37 +1,26 @@
-(use-package corfu
-  :custom
-  (corfu-cycle t)
-  (corfu-auto t)
-  (corfu-quit-no-match t)
-  (corfu-auto-prefix 1)
-  (corfu-auto-delay 0.25)
-  (corfu-scroll-margin 4)
-  (corfu-preview-current nil)
+(use-package company
+  :requires yasnippet
+  :hook global-company-mode
   :config
-  (defun setup/abort-into-normal-mode ()
+  (defun setup/company-abort-and-evil-normal ()
     (interactive)
-    (corfu-quit)
+    (company-abort)
     (evil-normal-state))
-  (evil-make-overriding-map corfu-map)
-  (advice-add 'corfu--setup :after 'evil-normalize-keymaps)
-  (advice-add 'corfu--teardown :after 'evil-normalize-keymaps)
-  (set-face-foreground 'corfu-default "black")
-  (set-face-background 'corfu-default "white")
-  :bind
-  (:map corfu-map
-		("<escape>" . setup/abort-into-normal-mode)
-        ("TAB" . nil)
-        ("<tab>" . nil)
-		("RET" . newline)
-		("M-p" . corfu-first)
-		("M-n" . corfu-last)
-		("C-p" . corfu-previous)
-		("C-n" . corfu-next)
-		("C-y" . corfu-insert)
-		("C-e" . corfu-quit)
-		("C-u" . corfu-scroll-up)
-		("C-d" . corfu-scroll-down)
-		("C-g" . corfu-info-location)
-		("C-h" . corfu-into-documentation)))
+  (define-key company-active-map (kbd "C-d") 'company-abort)
+  (define-key company-active-map (kbd "C-e") 'company-complete-common)
+  (define-key company-active-map (kbd "C-y") 'company-complete-selection)
+  (define-key company-active-map (kbd "<escape>") 'setup/company-abort-and-evil-normal)
+  (define-key company-active-map (kbd "ESC") 'setup/company-abort-and-evil-normal)
+  (define-key company-active-map (kbd "RET") 'newline)
+  (define-key company-active-map (kbd "<return>") 'newline)
+  (define-key company-active-map (kbd "<tab>") 'yas-next-field-or-maybe-expand)
+  (define-key company-active-map (kbd "TAB") 'yas-next-field-or-maybe-expand)
+  (setq company-minimum-prefix-length 1
+        company-idle-delay 0.25
+        company-selection-wrap-around t
+        company-dabbrev-ignore-case nil
+        company-frontends '(company-pseudo-tooltip-frontend
+                            company-echo-metadata-frontend)
+        company-transformers '(delete-consecutive-dups)))
 
 (provide 'init-auto-complete)
