@@ -32,6 +32,7 @@
   (define-key evil-motion-state-map leader-key setup/leader-map)
 
   ;; Additional Evil options goes here.
+  (global-set-key (kbd "C-c z") 'evil-mode)
   (evil-mode 1))
 
 (provide 'init-evil)

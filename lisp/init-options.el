@@ -65,5 +65,7 @@
 ;; C-c keys
 (global-set-key (kbd "C-c n f") 'ffap)
 (global-set-key (kbd "C-c n g") 'xref-goto-xref)
+(global-set-key (kbd "C-c n b") 'beginning-of-buffer)
+(global-set-key (kbd "C-c n e") 'end-of-buffer)
 
 (provide 'init-options)
