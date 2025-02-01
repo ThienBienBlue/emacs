@@ -1,5 +1,5 @@
 (use-package magit
   :config
-  (define-key setup/leader-map (kbd "g") 'magit-status))
+  (global-set-key (kbd "C-c g") 'magit-status))
 
 (provide 'init-magit)

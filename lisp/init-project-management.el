@@ -1,3 +1,3 @@
-(define-key setup/leader-map (kbd "p") project-prefix-map)
+(global-set-key (kbd "C-c p") project-prefix-map)
 
 (provide 'init-project-management)

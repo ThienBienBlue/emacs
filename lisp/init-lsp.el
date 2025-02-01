@@ -17,6 +17,6 @@
   (define-key setup/eglot-map (kbd "i") 'eglot-find-implementation)
   (define-key setup/eglot-map (kbd "c") 'eglot-code-actions)
 
-  (define-key setup/leader-map (kbd "l") setup/eglot-map))
+  (global-set-key (kbd "C-c l") setup/eglot-map))
 
 (provide 'init-lsp)

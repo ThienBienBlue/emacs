@@ -13,6 +13,10 @@
   ;; E.g. my-leader-map -> project-prefix-map -> [KEY].
   (defvar setup/leader-map (make-sparse-keymap) "Keymap for `\\` leader key.")
 
+  (define-key setup/leader-map (kbd "g") 'magit-status)
+  (define-key setup/leader-map (kbd "p") project-prefix-map)
+  (define-key setup/leader-map (kbd "l") setup/eglot-map)
+
   ;; Personal <leader>c mappings. `c` key to follow C-c convention for emacs.
   (defvar setup/leader-c-map (make-sparse-keymap) "Keymap for `<leader>c` prefix.")
   (define-key setup/leader-c-map (kbd "c") 'company-mode)

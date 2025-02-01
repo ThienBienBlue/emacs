@@ -22,10 +22,11 @@
 (push setup/config-dir load-path)
 
 (require 'init-options)
-(require 'init-evil)
 (require 'init-magit)
 (require 'init-project-management)
 (require 'init-snippet)
 (require 'init-auto-complete)
 (require 'init-lsp)
 (require 'init-themes)
+
+(require 'init-evil)
