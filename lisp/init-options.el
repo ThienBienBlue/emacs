@@ -48,8 +48,8 @@
             (setq electric-indent-inhibit t)))
 
 ;; Fuzzy completion options
-(setq-default completion-styles '(initials partial-completion flex))
 (fido-mode)
+(setq-default completion-styles '(initials partial-completion flex))
 
 ;; Make buffer names unique.
 (setq-default uniquify-buffer-name-style 'post-forward)
