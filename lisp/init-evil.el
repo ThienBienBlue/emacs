@@ -16,17 +16,15 @@
   (define-key setup/leader-map (kbd "g") 'magit-status)
   (define-key setup/leader-map (kbd "p") project-prefix-map)
   (define-key setup/leader-map (kbd "l") setup/eglot-map)
+  (define-key setup/leader-map (kbd "c") 'company-mode)
 
-  ;; Personal <leader>c mappings. `c` key to follow C-c convention for emacs.
-  (defvar setup/leader-c-map (make-sparse-keymap) "Keymap for `<leader>c` prefix.")
-  (define-key setup/leader-c-map (kbd "c") 'company-mode)
-  (define-key setup/leader-c-map (kbd "f") 'ffap)
-  (define-key setup/leader-c-map (kbd "g") 'xref-goto-xref)
-  (define-key setup/leader-c-map (kbd "t") 'load-theme)
-  (define-key setup/leader-c-map (kbd "w") 'delete-trailing-whitespace)
+  ;; Navigation <leader>n mappings.
+  (defvar setup/navigation-map (make-sparse-keymap) "Keymap for `<leader>n` prefix.")
+  (define-key setup/navigation-map (kbd "f") 'ffap)
+  (define-key setup/navigation-map (kbd "g") 'xref-goto-xref)
 
   ;; Bind maps to the leader key
-  (define-key setup/leader-map (kbd "c") setup/leader-c-map)
+  (define-key setup/leader-map (kbd "n") setup/navigation-map)
 
   ;; Bind evil-keys to activate my-leader-map. Use the VIM default.
   (defconst leader-key (kbd "\\") "The chosen VIM leader key.")

@@ -62,4 +62,8 @@
 (setq-default c-default-style "linux"
               c-basic-offset 4)
 
+;; C-c keys
+(global-set-key (kbd "C-c n f") 'ffap)
+(global-set-key (kbd "C-c n g") 'xref-goto-xref)
+
 (provide 'init-options)
