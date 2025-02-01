@@ -1,16 +1,14 @@
 (use-package company
   :requires yasnippet
-  :hook global-company-mode
   :config
-  (defun setup/company-abort-and-evil-normal ()
-    (interactive)
-    (company-abort)
-    (evil-normal-state))
+
+  (global-set-key (kbd "C-c c") 'company-mode)
+
   (define-key company-active-map (kbd "C-d") 'company-abort)
   (define-key company-active-map (kbd "C-e") 'company-complete-common)
   (define-key company-active-map (kbd "C-y") 'company-complete-selection)
-  (define-key company-active-map (kbd "<escape>") 'setup/company-abort-and-evil-normal)
-  (define-key company-active-map (kbd "ESC") 'setup/company-abort-and-evil-normal)
+  (define-key company-active-map (kbd "<escape>") 'company-abort)
+  (define-key company-active-map (kbd "ESC") 'company-abort)
   (define-key company-active-map (kbd "RET") 'newline)
   (define-key company-active-map (kbd "<return>") 'newline)
   (define-key company-active-map (kbd "<tab>") 'yas-next-field-or-maybe-expand)
