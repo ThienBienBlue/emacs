@@ -48,9 +48,12 @@
             (setq c-syntactic-indentation nil)
             (setq electric-indent-inhibit t)))
 
-;; Fuzzy completion options
+;; Fuzzy completion options.
 (fido-mode)
-(setq-default completion-styles '(initials partial-completion flex))
+(setq completion-styles '(initials partial-completion flex))
+
+;; I-search options.
+(setq isearch-lazy-count t)
 
 ;; Make buffer names unique.
 (setq-default uniquify-buffer-name-style 'post-forward)
