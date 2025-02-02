@@ -4,6 +4,7 @@
 (setq column-number-mode t)
 (setq ring-bell-function 'ignore)
 (setq scroll-step 1)
+(setq scroll-error-top-bottom t)
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
