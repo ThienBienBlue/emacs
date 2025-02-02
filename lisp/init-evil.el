@@ -22,6 +22,9 @@
   (defvar setup/navigation-map (make-sparse-keymap) "Keymap for `<leader>n` prefix.")
   (define-key setup/navigation-map (kbd "f") 'ffap)
   (define-key setup/navigation-map (kbd "g") 'xref-goto-xref)
+  (define-key setup/navigation-map (kbd "t") 'tab-new)
+  (define-key setup/navigation-map (kbd "c") 'tab-close)
+  (define-key setup/navigation-map (kbd "b") 'tab-list)
 
   ;; Bind maps to the leader key
   (define-key setup/leader-map (kbd "n") setup/navigation-map)

@@ -66,10 +66,16 @@
 (setq-default c-default-style "linux"
               c-basic-offset 4)
 
-;; C-c keys
+;; Window management.
+(tab-bar-mode t)
+
+(global-set-key (kbd "M-o") 'tab-next)  ; Same as `C-x o'.
+(global-set-key (kbd "C-c n t") 'tab-new)
+(global-set-key (kbd "C-c n b") 'tab-list)
+(global-set-key (kbd "C-c n c") 'tab-close)
+
+;; Navigation.
 (global-set-key (kbd "C-c n f") 'ffap)
 (global-set-key (kbd "C-c n g") 'xref-goto-xref)
-(global-set-key (kbd "C-c n b") 'beginning-of-buffer)
-(global-set-key (kbd "C-c n e") 'end-of-buffer)
 
 (provide 'init-options)

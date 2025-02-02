@@ -1,7 +1,4 @@
 (load-theme 'tango-dark)
-(set-face-attribute 'mode-line nil :box nil)
-(set-face-attribute 'mode-line-inactive nil :box nil)
-(set-face-attribute 'region nil :foreground (face-attribute 'default :foreground))
 
 (defun extract-rgb (rgb hex)
   "Converts string #rrggbb in hex to corresponding rr/gg/bb int."
@@ -74,5 +71,18 @@
 (if (< 0 (length fonts-found))
     (progn (setq chosen-font (seq-random-elt fonts-found))
            (set-face-attribute 'default nil :font chosen-font)))
+
+;; Tab bar face.
+(set-face-attribute 'tab-bar-tab nil
+                    :box nil)
+(set-face-attribute 'tab-bar nil
+                    :box nil
+                    :foreground (face-attribute 'default :foreground)
+                    :background (face-attribute 'default :background))
+
+;; Mode line face.
+(set-face-attribute 'mode-line nil :box nil)
+(set-face-attribute 'mode-line-inactive nil :box nil)
+(set-face-attribute 'region nil :foreground (face-attribute 'default :foreground))
 
 (provide 'init-themes)
