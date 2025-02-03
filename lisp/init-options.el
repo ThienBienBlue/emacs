@@ -73,6 +73,7 @@
 (global-set-key (kbd "C-c n t") 'tab-new)
 (global-set-key (kbd "C-c n b") 'tab-list)
 (global-set-key (kbd "C-c n c") 'tab-close)
+(global-set-key (kbd "C-c y y") 'copy-from-above-command)
 
 ;; Navigation.
 (global-set-key (kbd "C-c n f") 'ffap)
