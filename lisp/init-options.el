@@ -11,6 +11,9 @@
 (menu-bar-mode -1)
 
 (global-display-line-numbers-mode t)
+(setq-default line-move-visual nil)
+(setq-default word-wrap t)
+
 (global-set-key [remap list-buffers] 'ibuffer)
 (global-auto-revert-mode t)
 (setq global-auto-revert-non-file-buffers t)
