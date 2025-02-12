@@ -31,8 +31,8 @@
 
 ;; Prefer word wrap.
 (global-display-line-numbers-mode t)
-(setq-default line-move-visual nil)
-(setq-default word-wrap t)
+(setq-default line-move-visual nil
+              word-wrap t)
 
 ;; ibuffer mode.
 (global-set-key [remap list-buffers] 'ibuffer)
@@ -51,26 +51,28 @@
 (setq use-short-answers t)
 
 ;; Indentation related global options.
-(setq-default backward-delete-char-untabify-method nil
-              indent-tabs-mode nil
-              tab-width 4)
+(setq-default tab-width 4
+              backward-delete-char-untabify-method 'hungry)
 
 ;; Indentation related specifics options.
-(defun let-mode-handle-indentation ()
-  (setq indent-tabs-mode nil)
-  (setq backward-delete-char-untabify-method 'hungry))
+(defun user-manual-indent-tabs ()
+  (local-set-key (kbd "TAB") 'c-indent-line-or-region)
+  (setq indent-tabs-mode t
+        c-syntactic-indentation nil
+        indent-line-function 'indent-relative-first-indent-point
+        backward-delete-char-untabify-method nil
+        electric-indent-inhibit t))
+(setq modes-that-use-manual-tabs '(c-mode-hook odin-mode-hook))
 
-(setq modes-that-handle-indentation '(c-mode-common-hook
-                                      lisp-mode-hook
-                                      emacs-lisp-mode-hook))
-(dolist (mode modes-that-handle-indentation)
-  (add-hook mode 'let-mode-handle-indentation))
+(dolist (mode modes-that-use-manual-tabs)
+  (add-hook mode 'user-manual-indent-tabs))
 
-(add-hook 'c-mode-hook
-          (lambda () (setq indent-tabs-mode t)
-            (setq backward-delete-char-untabify-method nil)
-            (setq c-syntactic-indentation nil)
-            (setq electric-indent-inhibit t)))
+(defun let-mode-use-spaces ()
+  (setq indent-tabs-mode nil))
+(setq modes-that-use-space-indents '(lisp-mode-hook emacs-lisp-mode-hook))
+
+(dolist (mode modes-that-use-space-indents)
+  (add-hook mode 'let-mode-use-spaces))
 
 ;; Fuzzy completion options.
 (fido-mode)
