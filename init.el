@@ -100,19 +100,11 @@
 (global-set-key (kbd "C-c n b") 'tab-list)
 (global-set-key (kbd "C-c n c") 'tab-close)
 
-(global-set-key (kbd "C-c v v") 'set-mark-command)
-(global-set-key (kbd "C-c V") 'rectangle-mark-mode)
-(global-set-key (kbd "C-c C-v") 'rectangle-mark-mode)
-(global-set-key (kbd "C-c v g") 'mark-whole-buffer)
-
 (global-set-key (kbd "C-c y y") 'copy-from-above-command)
 
 ;; Navigation.
 (global-set-key (kbd "C-c n f") 'ffap)
 (global-set-key (kbd "C-c n g") 'xref-goto-xref)
-
-;; Project Management
-(global-set-key (kbd "C-c p") project-prefix-map)
 
 ;; Package Magit.
 (use-package magit
