@@ -59,7 +59,7 @@
   (local-set-key (kbd "TAB") 'c-indent-line-or-region)
   (setq indent-tabs-mode t
         c-syntactic-indentation nil
-        indent-line-function 'indent-relative-first-indent-point
+        indent-line-function 'c-indent-line
         backward-delete-char-untabify-method nil
         electric-indent-inhibit t))
 (setq modes-that-use-manual-tabs '(c-mode-hook odin-mode-hook))
