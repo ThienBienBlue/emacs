@@ -95,7 +95,7 @@
 ;; Window management.
 (tab-bar-mode t)
 
-(global-set-key (kbd "M-o") 'tab-next)  ; Same as `C-x o'.
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-c n t") 'tab-new)
 (global-set-key (kbd "C-c n b") 'tab-list)
 (global-set-key (kbd "C-c n c") 'tab-close)
@@ -160,6 +160,21 @@
   (define-key setup/eglot-map (kbd "c") 'eglot-code-actions)
 
   (global-set-key (kbd "C-c l") setup/eglot-map))
+
+;; Evil mode.
+(setq evil-want-C-u-scroll t
+      evil-want-fine-undo t
+      evil-search-module 'evil-search
+      evil-undo-system 'undo-redo
+      evil-visual-state-cursor '(hollow)
+      evil-split-window-below t
+      evil-vsplit-window-right t)
+
+(use-package evil
+  :config
+  ;; Additional Evil options goes here.
+  (global-set-key (kbd "C-c z") 'evil-mode)
+  (evil-mode 1))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
@@ -226,15 +241,16 @@
 (global-whitespace-mode +1)
 
 (setq-default line-spacing 0.1)
-(setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
-                              '(
-                                "Monospace"
-                                ;"FiraMono"
-                                ;"Source Code Pro"
-                                )))
-(if (< 0 (length fonts-found))
-    (progn (setq chosen-font (seq-random-elt fonts-found))
-           (set-face-attribute 'default nil :font chosen-font)))
+(set-face-attribute 'default nil :font "Monospace")
+;(setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
+;                              '(
+;                                "Monospace"
+;                                ;"FiraMono"
+;                                ;"Source Code Pro"
+;                                )))
+;(if (< 0 (length fonts-found))
+;    (progn (setq chosen-font (seq-random-elt fonts-found))
+;           (set-face-attribute 'default nil :font chosen-font)))
 
 ;; Tab bar face.
 (set-face-attribute 'tab-bar-tab nil
