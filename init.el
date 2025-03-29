@@ -173,8 +173,8 @@
 (use-package evil
   :config
   ;; Additional Evil options goes here.
-  (global-set-key (kbd "C-c z") 'evil-mode)
-  (evil-mode 1))
+  (global-set-key (kbd "C-c z") 'evil-mode))
+  ;(evil-mode 1))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
@@ -241,7 +241,7 @@
 (global-whitespace-mode +1)
 
 (setq-default line-spacing 0.1)
-(set-face-attribute 'default nil :font "Monospace")
+(set-face-attribute 'default nil :font "Monospace 10")
 ;(setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
 ;                              '(
 ;                                "Monospace"
