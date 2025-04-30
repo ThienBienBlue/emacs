@@ -161,21 +161,6 @@
 
   (global-set-key (kbd "C-c l") setup/eglot-map))
 
-;; Evil mode.
-(setq evil-want-C-u-scroll t
-      evil-want-fine-undo t
-      evil-search-module 'evil-search
-      evil-undo-system 'undo-redo
-      evil-visual-state-cursor '(hollow)
-      evil-split-window-below t
-      evil-vsplit-window-right t)
-
-(use-package evil
-  :config
-  ;; Additional Evil options goes here.
-  (global-set-key (kbd "C-c z") 'evil-mode))
-  ;(evil-mode 1))
-
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
 
