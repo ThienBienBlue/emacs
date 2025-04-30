@@ -240,13 +240,19 @@
 
 (global-whitespace-mode +1)
 
+;; Use one of the prefered fonts.
 (setq-default line-spacing 0.1)
-(set-face-attribute 'default nil :font "Monospace 10")
+(setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
+                          '("Consolas"
+                            "Monospace 10")))
+(if font-name
+    (set-face-attribute 'default nil :font font-name))
+
+;; Uncomment to use font at random.
 ;(setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
 ;                              '(
-;                                "Monospace"
-;                                ;"FiraMono"
-;                                ;"Source Code Pro"
+;                                "Consolas"
+;                                "Monospace 10"
 ;                                )))
 ;(if (< 0 (length fonts-found))
 ;    (progn (setq chosen-font (seq-random-elt fonts-found))
