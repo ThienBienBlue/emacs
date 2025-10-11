@@ -225,6 +225,15 @@
 
 (global-whitespace-mode +1)
 
+;; Use a hollow cursor when mark is active and a region exists.
+(defun th-activate-mark-init ()
+  (setq cursor-type 'hollow))
+(add-hook 'activate-mark-hook 'th-activate-mark-init)
+
+(defun th-deactivate-mark-init ()
+  (setq cursor-type 'box))
+(add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
+
 ;; Use one of the prefered fonts.
 (setq-default line-spacing 0.1)
 (setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
