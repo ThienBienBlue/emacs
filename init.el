@@ -235,12 +235,14 @@
 (add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
 
 ;; Use one of the prefered fonts.
+(set-face-attribute 'default nil :font "Monospace")
+
 ;(setq-default line-spacing 0.1)
-(setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
-                          '("Consolas"
-                            "Monospace 10")))
-(if font-name
-    (set-face-attribute 'default nil :font font-name))
+;(setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
+;                          '("Consolas"
+;                            "Monospace 10")))
+;(if font-name
+;    (set-face-attribute 'default nil :font font-name))
 
 ;; Uncomment to use font at random.
 ;(setq fonts-found (seq-filter (lambda (name) (find-font (font-spec :name name)))
