@@ -235,7 +235,7 @@
 (add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
 
 ;; Use one of the prefered fonts.
-(setq-default line-spacing 0.1)
+;(setq-default line-spacing 0.1)
 (setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
                           '("Consolas"
                             "Monospace 10")))
