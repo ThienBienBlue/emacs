@@ -1,3 +1,8 @@
+;; OS Detection
+(defvar os-windows (string-equal system-type "windows-nt") "Running on Windows.")
+(defvar os-linux (string-equal system-type "gnu/linux") "Running on Linux.")
+(defvar os-macos (string-equal system-type "darwin") "Running on macOS.")
+
 ;; Set up package.el to work with various stores.
 (require 'package)
 (add-to-list 'package-archives
@@ -173,8 +178,8 @@
 (use-package evil
   :config
   ;; Additional Evil options goes here.
-  (global-set-key (kbd "C-c z") 'evil-mode))
-  ;(evil-mode 1))
+  (global-set-key (kbd "C-c z") 'evil-mode)
+  (if os-macos (evil-mode 1)))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
@@ -250,7 +255,8 @@
 (add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
 
 ;; Use one of the prefered fonts.
-(set-face-attribute 'default nil :font "Monospace")
+(if os-linux
+    (set-face-attribute 'default nil :font "Monospace"))
 
 ;(setq-default line-spacing 0.1)
 ;(setq font-name (seq-find (lambda (name) (find-font (font-spec :name name)))
