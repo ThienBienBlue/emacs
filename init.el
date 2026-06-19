@@ -116,7 +116,7 @@
   (interactive)
   (let ((current-prefix-arg '(4)))
     (call-interactively 'shell-command-on-region)))
-(global-set-key (kbd "C-c s") 'consume-region-into-shell-and-pipe-output)
+(global-set-key (kbd "C-c !") 'consume-region-into-shell-and-pipe-output)
 
 ;; Package Magit.
 (use-package magit
