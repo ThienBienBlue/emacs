@@ -1,6 +1,4 @@
 ;; OS Detection
-(defvar os-windows (string-equal system-type "windows-nt") "Running on Windows.")
-(defvar os-linux (string-equal system-type "gnu/linux") "Running on Linux.")
 (defvar os-macos (string-equal system-type "darwin") "Running on macOS.")
 
 ;; Set up package.el to work with various stores.
@@ -173,20 +171,20 @@
 
   (global-set-key (kbd "C-c l") setup/eglot-map))
 
-;; Evil mode.
-(setq evil-want-C-u-scroll t
-      evil-want-fine-undo t
-      evil-search-module 'evil-search
-      evil-undo-system 'undo-redo
-      evil-visual-state-cursor '(hollow)
-      evil-split-window-below t
-      evil-vsplit-window-right t)
-
-(use-package evil
-  :config
-  ;; Additional Evil options goes here.
-  (global-set-key (kbd "C-c z") 'evil-mode)
-  (if os-macos (evil-mode 1)))
+;; Evil mode but only when missing right CTRL key.
+(when os-macos
+  (setq evil-want-C-u-scroll t
+           evil-want-fine-undo t
+           evil-search-module 'evil-search
+           evil-undo-system 'undo-redo
+           evil-visual-state-cursor '(hollow)
+           evil-split-window-below t
+           evil-vsplit-window-right t)
+  (use-package evil
+    :config
+    ;; Additional Evil options goes here.
+    (global-set-key (kbd "C-c z") 'evil-mode))
+  (evil-mode 1))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
