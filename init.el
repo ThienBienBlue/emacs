@@ -111,6 +111,13 @@
 (global-set-key (kbd "C-c n f") 'ffap)
 (global-set-key (kbd "C-c n g") 'xref-goto-xref)
 
+;; Pipe input into shell and output in buffer `C-u M-|'.
+(defun consume-region-into-shell-and-pipe-output ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'shell-command-on-region)))
+(global-set-key (kbd "C-c s") 'consume-region-into-shell-and-pipe-output)
+
 ;; Package Magit.
 (use-package magit
   :config
