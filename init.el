@@ -16,6 +16,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;; If file contains the shebang, chmod +x the file.
+(add-hook 'after-save-hook
+          #'executable-make-buffer-file-executable-if-script-p)
+
 (eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t
       use-package-expand-minimally t)
@@ -36,6 +40,16 @@
 (global-display-line-numbers-mode t)
 (setq-default line-move-visual nil
               word-wrap t)
+
+;; Performance Tweaks.
+(setq-default bidi-display-reordering 'left-to-right
+              bidi-paragraph-direction 'left-to-right)
+(setq bidi-inhibit-bpa t)
+(setq redisplay-skip-fontification-on-input t)
+(setq read-process-output-max (* 4 1024 1024))  ; 4MB
+
+;; Standard regex instead of read syntax.
+(setq reb-re-syntax 'string)
 
 ;; ibuffer mode.
 (global-set-key [remap list-buffers] 'ibuffer)
@@ -97,6 +111,7 @@
 
 ;; Window management.
 (tab-bar-mode t)
+(setq window-combination-resize t)
 
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "C-c n t") 'tab-new)
@@ -106,15 +121,17 @@
 (global-set-key (kbd "C-c y y") 'copy-from-above-command)
 
 ;; Navigation.
+(setq set-mark-command-repeat-pop t)
+(repeat-mode 1)
 (global-set-key (kbd "C-c n f") 'ffap)
 (global-set-key (kbd "C-c n g") 'xref-goto-xref)
 
 ;; Pipe input into shell and output in buffer `C-u M-|'.
-(defun consume-region-into-shell-and-pipe-output ()
+(defun shell-command-consume-region ()
   (interactive)
   (let ((current-prefix-arg '(4)))
     (call-interactively 'shell-command-on-region)))
-(global-set-key (kbd "C-c !") 'consume-region-into-shell-and-pipe-output)
+(global-set-key (kbd "C-c !") 'shell-command-consume-region)
 
 ;; Package Magit.
 (use-package magit
