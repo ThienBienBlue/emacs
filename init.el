@@ -1,6 +1,3 @@
-;; OS Detection
-(defvar os-macos (string-equal system-type "darwin") "Running on macOS.")
-
 ;; Set up package.el to work with various stores.
 (require 'package)
 (add-to-list 'package-archives
@@ -215,20 +212,16 @@ point reaches the beginning or end of the buffer, stop there."
 
   (global-set-key (kbd "C-c l") setup/eglot-map))
 
-;; Evil mode but only when missing right CTRL key.
-(when os-macos
-  (setq evil-want-C-u-scroll t
-           evil-want-fine-undo t
-           evil-search-module 'evil-search
-           evil-undo-system 'undo-redo
-           evil-visual-state-cursor '(hollow)
-           evil-split-window-below t
-           evil-vsplit-window-right t)
-  (use-package evil
-    :config
-    ;; Additional Evil options goes here.
-    (global-set-key (kbd "C-c z") 'evil-mode))
-  (evil-mode 1))
+;; If on macos, use cmd as ctrl, for ergonomics.
+;; But CMD+SPC will spotlight search, so work around that.
+;; Either s-SPC or C-S-SPC to get emacs functionality.
+(when (eq system-type 'darwin)
+  (setq
+   ns-command-modifier 'control
+   ns-option-modifier 'meta
+   ns-control-modifier 'super
+   ns-function-modifier 'hyper)
+  (global-set-key (kbd "s-SPC") 'set-mark-command))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
