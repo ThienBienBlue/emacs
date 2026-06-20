@@ -142,9 +142,9 @@ point reaches the beginning or end of the buffer, stop there."
       (forward-line (1- arg))))
 
   (let ((orig-point (point)))
-    (back-to-indentation)
+    (move-beginning-of-line 1)
     (when (= orig-point (point))
-      (move-beginning-of-line 1))))
+      (back-to-indentation))))
 
 ; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
