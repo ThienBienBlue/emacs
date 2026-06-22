@@ -154,11 +154,10 @@ point reaches the beginning or end of the buffer, stop there."
 (defun shell-command-dwim ()
   "Runs 'shell-command-on-region if there is a selected region, otherwise 'shell-command"
   (interactive)
-  (if (use-region-p)
-      (let ((current-prefix-arg '(4)))
+  (let ((current-prefix-arg '(4)))
+    (if (use-region-p)
         (call-interactively 'shell-command-on-region))
-    (let ((current-prefix-arg '(4)))
-       (call-interactively 'shell-command))))
+    (call-interactively 'shell-command)))
 (global-set-key (kbd "C-c !") 'shell-command-dwim)
 
 ;; Package Magit.
