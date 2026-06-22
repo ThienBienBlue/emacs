@@ -151,11 +151,15 @@ point reaches the beginning or end of the buffer, stop there."
                 'smarter-move-beginning-of-line)
 
 ;; Pipe input into shell and output in buffer `C-u M-|'.
-(defun shell-command-consume-region ()
+(defun shell-command-dwim ()
+  "Runs 'shell-command-on-region if there is a selected region, otherwise 'shell-command"
   (interactive)
-  (let ((current-prefix-arg '(4)))
-    (call-interactively 'shell-command-on-region)))
-(global-set-key (kbd "C-c !") 'shell-command-consume-region)
+  (if (use-region-p)
+      (let ((current-prefix-arg '(4)))
+        (call-interactively 'shell-command-on-region))
+    (let ((current-prefix-arg '(4)))
+       (call-interactively 'shell-command))))
+(global-set-key (kbd "C-c !") 'shell-command-dwim)
 
 ;; Package Magit.
 (use-package magit
@@ -221,7 +225,8 @@ point reaches the beginning or end of the buffer, stop there."
    ns-option-modifier 'meta
    ns-control-modifier 'super
    ns-function-modifier 'hyper)
-  (global-set-key (kbd "s-SPC") 'set-mark-command))
+  (global-set-key (kbd "s-SPC") 'set-mark-command)
+  (global-set-key (kbd "M-s-SPC") 'mark-sexp))
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
