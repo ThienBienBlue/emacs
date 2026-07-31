@@ -218,14 +218,13 @@ point reaches the beginning or end of the buffer, stop there."
 ;; If on macos, use cmd as ctrl, for ergonomics.
 ;; But CMD+SPC will spotlight search, so work around that.
 ;; Either s-SPC or C-S-SPC to get emacs functionality.
-(when (eq system-type 'darwin)
-  (setq
+(setq
    ns-command-modifier 'control
    ns-option-modifier 'meta
    ns-control-modifier 'super
    ns-function-modifier 'hyper)
   (global-set-key (kbd "s-SPC") 'set-mark-command)
-  (global-set-key (kbd "M-s-SPC") 'mark-sexp))
+  (global-set-key (kbd "M-s-SPC") 'mark-sexp)
 
 ;; Themeing at very end to easily tell if something went wrong earlier.
 (load-theme 'tango-dark)
