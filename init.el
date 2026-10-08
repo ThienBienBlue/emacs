@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; Set up package.el to work with various stores.
 (require 'package)
 (add-to-list 'package-archives
